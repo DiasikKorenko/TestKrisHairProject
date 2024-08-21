@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Kris_Hair.Minsk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/animate.css">
+    <link rel="stylesheet" href="../assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/aos.css">
+    <link rel="stylesheet" href="../assets/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../assets/jquery.timepicker.css">
+    <link rel="stylesheet" href="../assets/flaticon.css">
+    <link rel="stylesheet" href="../assets/css/css/icomoon.css">
+    <link rel="stylesheet" href="/assets/style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=08da7702-f104-43c4-a46e-0fc23175899a&lang=ru_RU"></script>
+
+    <style>
+        .photo-gallery {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            margin-top: -30px;
+            scroll-behavior: smooth; /* Плавная прокрутка */
+            padding-bottom: 10px; /* Это значение было указано дважды */
+        }
+
+        .photo-gallery img {
+            display: inline-block;
+            width: 200px; /* Возможно, стоит использовать процентное значение или `auto` */
+            height: auto;
+            margin-right: 10px; /* Это значение можно скорректировать */
+        }
+
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: 2px solid #ce9c6b; /* Золотой обод */
+            border-radius: 50%; /* Круглая форма */
+            width: 40px;
+            height: 40px;
+            color: #ce9c6b;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left-arrow {
+            left: 0; /* Расстояние от левого края контейнера */
+            margin-left: 100px;
+            z-index: auto;
+            margin-top: -70px;
+        }
+
+        .right-arrow {
+            right: 0; /* Расстояние от правого края контейнера */
+            margin-right: 100px;
+            z-index: auto;
+            margin-top: -70px;
+        }
+
+        .gallery-arrow:hover,
+        .gallery-arrow:focus,
+        .gallery-arrow:active {
+            background-color: #ce9c6b !important;
+            color: #fff !important;
+            border-color: #ce9c6b !important; /* Устанавливаем золотой ободок для всех состояний с важностью */
+            outline: none; /* Убирает фокус */
+        }
+
+        .photo-gallery::-webkit-scrollbar {
+            display: none; /* Для WebKit браузеров (Chrome, Safari) */
+        }
+
+        .photo-gallery {
+            -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+            scrollbar-width: none; /* Для Firefox */
+        }
+
+        .staffix {
+            padding: 25px;
+            bordeR: 1px solid #ce9c6b;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            border-radius: 4px;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 767.98px) {
+            .staffix {
+                margin-bottom: 30px;
+            }
+        }
+
+        .staffix .info {
+            width: 100%;
+        }
+
+        .staffix .info h3 {
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .staffix .info h3 a {
+            color: #ce9c6b;
+        }
+
+        .staffix .info span.position {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #cccccc;
+        }
+
+        .staffix .img {
+            width: 110px;
+            height: 110px;
+            border: 1px solid #52361b;
+            margin: 0 auto;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        .staffix:hover .img, .staffix:focus .img {
+            border: 1px solid #ce9c6b;
+        }
+
+        .mapstyle {
+            height: 85%;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgb(229, 227, 223);
+        }
+
+
+        .ftco-animates {
+            margin-left: 210px; /* Сдвиг вправо на больших экранах */
+            margin-top: 25px;   /* Отступ сверху */
+            /* Другие стили для больших экранов */
+        }
+
+        .images-footer {
+          width: 156px;   /* Отступ сверху */
+            /* Другие стили для больших экранов */
+        }
+
+        .text-footer {
+            margin-top: -20px;
+            color: #efd961;
+            font-size: 37px;
+            font-weight: 300;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .ftco-footer p {
+            color: rgb(239, 217, 97);
+        }
+
+        @media (max-width: 768px) {
+            .ftco-animates {
+                margin-left: -10px;
+                margin-top: 0px;
+                margin-bottom: -150px;
+                /* width: 30%; */
+                /* padding-bottom: 0px; */
+                align-content: center;
+            }
+
+            .images-footer {
+                width: 156px;   /* Отступ сверху */
+                /* Другие стили для больших экранов */
+            }
+
+            .text-footer {
+                margin-top: -20px;
+                color: #efd961;
+                font-size: 37px;
+                font-weight: 300;
+                font-family: 'Great Vibes', cursive;
+            }
+
+            #containerWrapMobile {
+                margin-top: 100px;
+
+            }
+
+            /*
+
+            #photoGallery {
+                display: flex;
+                overflow: hidden; !* Скрывает элементы, выходящие за границы контейнера *!
+                width: 100%; !* Ширина контейнера 100% *!
+                position: relative; !* Позиционирование для стрелок *!
+            }
+
+            #photoGallery .col-md-4 {
+                flex: 0 0 100%; !* Каждый элемент занимает 100% ширины контейнера *!
+                max-width: 100%; !* Ширина элемента не должна превышать 100% *!
+                box-sizing: border-box; !* Включает границы и отступы в ширину элемента *!
+            }
+
+            !* Стили для стрелок *!
+            .gallery-arrow {
+                position: absolute;
+                top: 50%;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                z-index: 10;
+                padding: 10px;
+            }
+
+            .left-arrow {
+                left: 10px;
+            }
+
+            .right-arrow {
+                right: 10px;
+            }
+            */
+
+           /* #photoGallery {
+                display: flex;
+                overflow: hidden; !* Скрывает элементы, выходящие за границы контейнера *!
+                width: 70%; !* Ширина контейнера 70% *!
+                margin: 0 auto; !* Центрирование контейнера *!
+                position: relative; !* Позиционирование для стрелок *!
+                box-sizing: border-box; !* Включает границы и отступы в ширину контейнера *!
+            }
+
+            !* Стили для элементов внутри контейнера *!
+            #photoGallery .col-md-4 {
+                flex: 0 0 100%; !* Каждый элемент занимает 100% ширины контейнера *!
+                max-width: 100%; !* Ширина элемента не должна превышать 100% *!
+                box-sizing: border-box; !* Включает границы и отступы в ширину элемента *!
+            }
+
+            !* Убедитесь, что элементы не имеют отступов или границ, которые могут повлиять на видимость *!
+            #photoGallery .blog-slide {
+                margin: 5px;
+                padding: 0;
+            }
+
+            !* Стили для стрелок *!
+            .gallery-arrow {
+                position: absolute;
+                top: 50%;
+                background-color: transparent;
+                border: 2px solid #ce9c6b;
+                color: #ce9c6b;
+                cursor: pointer;
+                z-index: 10;
+                padding: 10px;
+                font-size: 24px; !* Размер стрелок *!
+                transform: translateY(-50%); !* Центрирование стрелок по вертикали *!
+            }
+
+            !* Позиционирование стрелок по бокам *!
+            .left-arrow {
+                left: -90px; !* Сдвигаем стрелку влево на 40px, чтобы она не перекрывала фото *!
+            }
+
+            .right-arrow {
+                right: -90px; !* Сдвигаем стрелку вправо на 40px, чтобы она не перекрывала фото *!
+            }*/
+
+
+            #photoGallery {
+                display: flex;
+                overflow: hidden; /* Скрывает элементы, выходящие за границы контейнера */
+                width: 80%; /* Ширина контейнера 70% */
+                margin: 0 auto; /* Центрирование контейнера */
+                position: relative; /* Позиционирование для стрелок */
+                box-sizing: border-box; /* Включает границы и отступы в ширину контейнера */
+                margin-left: 30px;
+            }
+
+            #photoGallery .col-md-4 {
+                flex: 0 0 auto; /* Элементы занимают столько места, сколько им нужно */
+                max-width: 100%; /* Ширина элемента не должна превышать 100% */
+                box-sizing: border-box; /* Включает границы и отступы в ширину элемента */
+                margin: 0 10px; /* Отступы слева и справа между элементами */
+            }
+
+            .gallery-arrow {
+                position: absolute;
+                top: 50%;
+                background-color: transparent;
+                border: 2px solid #ce9c6b;
+                color: #ce9c6b;
+                cursor: pointer;
+                z-index: 10;
+                padding: 10px;
+                font-size: 24px; /* Размер стрелок */
+                transform: translateY(-50%); /* Центрирование стрелок по вертикали */
+            }
+
+            .left-arrow {
+                left: -90px; /* Расстояние от левого края контейнера */
+            }
+
+            .right-arrow {
+                right: -90px; /* Расстояние от правого края контейнера */
+            }
+
+            #photoGalleryOtziv{
+                display: flex;
+                overflow: hidden; /* Скрывает элементы, выходящие за границы контейнера */
+                width: 80%; /* Ширина контейнера 70% */
+                margin: 0 auto; /* Центрирование контейнера */
+                position: relative; /* Позиционирование для стрелок */
+                box-sizing: border-box; /* Включает границы и отступы в ширину контейнера */
+                margin-left: 30px;
+            }
+
+            #photoGalleryOtziv .col-md-4 {
+                flex: 0 0 auto; /* Элементы занимают столько места, сколько им нужно */
+                max-width: 100%; /* Ширина элемента не должна превышать 100% */
+                box-sizing: border-box; /* Включает границы и отступы в ширину элемента */
+                margin: 0 10px; /* Отступы слева и справа между элементами */
+            }
+        }
+
+
+        .error-message {
+            font-size: 0.675rem; /* Немного меньше стандартного размера шрифта */
+            color: #b03a2e; /* Бордовый цвет текста */
+            margin-top: 0.25rem; /* Небольшой отступ сверху */
+            margin-bottom: 0; /* Убираем отступ снизу */
+            display: block; /* Обеспечивает, что сообщение занимает новую строку */
+            padding: 0; /* Убираем внутренние отступы */
+            line-height: 1.2; /* Немного увеличиваем межстрочный интервал для удобства чтения */
+        }
+    </style>
+</head>
+<body >
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <!-- <a class="navbar-brand" href="index.html">KrisHeir.minsk</a>-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="#section1" class="nav-link">Услуги</a></li>
+                <li class="nav-item"><a href="#section2" class="nav-link">Цены</a></li>
+                <li class="nav-item"><a href="#section3" class="nav-link">Работы</a></li>
+                <li class="nav-item"><a href="#section4" class="nav-link">Отзывы</a></li>
+                <!--<li class="nav-item"><a href="blog.html" class="nav-link">Вопросы</a></li>-->
+                <li class="nav-item"><a href="#section5" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="hero-wrap js-fullheight" style="background-image: url('../assets/images/kartinki-s-volosami-2.jpg');"
+     data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center "
+             data-scrollax-parent="true">
+            <div class="col-md-8 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <img src="../assets/images/image-kris-logobg.png" width="156"/>
+                <p style="margin-top: -20px; color: #efd961;; font-size: 37px; font-weight: 300; font-family: 'Great Vibes', cursive">
+                    kris_hair.Minsk
+                </p>
+               <h2 style="justify-content: center" class="mb-5"
+                    data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Профессиональное<br> наращивание
+                натуральных<br> волос в Минске</h2>
+                <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a class="btn btn-primary px-4 py-3">г.
+                    Минск ул. Макаенка 12В. Цокольный этаж</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="ftco-intro">
+    <div class="container-wrap" id="containerWrapMobile">
+        <div class="wrap d-md-flex align-items-end">
+            <div class="info" >
+                <div class="row no-gutters">
+                    <div class="col-md-3 d-flex ">
+                        <div class="icon"><span class="icon-phone"></span></div>
+                        <div class="text">
+                            <h3>+375 (29) 310 95 35</h3>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex ">
+                        <div class="icon"><span class="icon-clock-o"></span></div>
+                        <div class="text">
+                            <h3>Пн-Вс: 9.00-21.00</h3>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex ">
+                        <div class="icon"><span class="icon-instagram"></span></div>
+                        <div class="text">
+                            <h3>Kris_hair.minsk</h3>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex ">
+                        <div class="icon"><span class="icon-telegram"></span></div>
+                        <div class="text">
+                            <h3>Kris_hair.minsk</h3>
+                            <br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section" id="section1">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section ftco-animate text-center">
+                <h2 class="mb-4" style="color:black">Наши услуги</h2>
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+               </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+                <div class="staff">
+                    <div class="img mb-4" style="background-image: url(../assets/images/italiano-img.jpg);"></div>
+                    <div class="info text-center">
+                        <h3><a href="#">Итальянское микрокапсульное</a></h3>
+                        <span class="position">наращивание волос</span>
+                        <div class="text">
+                            <p>Временный текст: горячее наращивание волос микрокапсулами по современной итальянской
+                                технологии.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+                <div class="staff">
+                    <div class="img mb-4" style="background-image: url(../assets/images/buolentochnoe.jpg);"></div>
+                    <div class="info text-center">
+                        <h3><a href="#">Биоленточное наращивание</a></h3>
+                        <span class="position">наращивание волос</span>
+                        <div class="text">
+                            <p>Временный текст: горячее наращивание волос микрокапсулами по современной итальянской
+                                технологии.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+                <div class="staff">
+                    <div class="img mb-4" style="background-image: url(../assets/images/holiwood.png);"></div>
+                    <div class="info text-center">
+                        <h3><a href="#">Голливудское наращивание</a></h3>
+                        <span class="position">наращивание волос</span>
+                        <div class="text">
+                            <p>Временный текст: горячее наращивание волос микрокапсулами по современной итальянской
+                                технологии.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+                <div class="staff">
+                    <div class="img mb-4" style="background-image: url(../assets/images/afrohvost.jpg);"></div>
+                    <div class="info text-center">
+                        <h3><a href="#">Афропрически хвост "Водопад"</a></h3>
+                        <span class="position">косы, локоны</span>
+                        <div class="text">
+                            <p>Временный текст: горячее наращивание волос микрокапсулами по современной итальянской
+                                технологии.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section" id="section2" style="margin-top: -130px">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section ftco-animate text-center">
+                <h2 class="mb-4" style="color:black">Наши цены</h2>
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+               </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pricing-entry ftco-animate">
+                    <div class="d-flex text align-items-center">
+                        <h3><span>Капсульное наращивание</span></h3>
+                        <span class="price">от $20.00</span>
+                    </div>
+                    <div class="d-block">
+                        <p>Временный текст: стоимость зависит от длины волоса</p>
+                    </div>
+                </div>
+                <div class="pricing-entry ftco-animate">
+                    <div class="d-flex text align-items-center">
+                        <h3><span>Биоленточное наращивание</span></h3>
+                        <span class="price">от $29.00</span>
+                    </div>
+                    <div class="d-block">
+                        <p>Временный текст: стоимость зависит от длины волоса</p>
+                    </div>
+                </div>
+                <div class="pricing-entry ftco-animate">
+                    <div class="d-flex text align-items-center">
+                        <h3><span>Афропрически</span></h3>
+                        <span class="price">от $20.00</span>
+                    </div>
+                    <div class="d-block">
+                        <p>Временный текст: стоимость зависит от длины волоса</p>
+                    </div>
+                </div>
+                <div class="pricing-entry ftco-animate">
+                    <div class="d-flex text align-items-center">
+                        <h3><span>Керативное выпрямление</span></h3>
+                        <span class="price">от $20.00</span>
+                    </div>
+                    <div class="d-block">
+                        <p>Временный текст: стоимость зависит от длины волоса</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pricing-entry ftco-animate">
+                    <div class="d-flex text align-items-center">
+                        <h3><span>Ботокс волос</span></h3>
+                        <span class="price">от $49.91</span>
+                    </div>
+                    <div class="d-block">
+                        <p>Временный текст: стоимость зависит от длины волоса</p>
+                    </div>
+                </div>
+                <div class="pricing-entry ftco-animate">
+                    <div class="d-flex text align-items-center">
+                        <h3><span>Холодное восстановление</span></h3>
+                        <span class="price">от $20.00</span>
+                    </div>
+                    <div class="d-block">
+                        <p>Временный текст: стоимость зависит от длины волоса</p>
+                    </div>
+                </div>
+                <div class="pricing-entry ftco-animate">
+                    <div class="d-flex text align-items-center">
+                        <h3><span>Пилинг коди головы</span></h3>
+                        <span class="price">от $20.00</span>
+                    </div>
+                    <div class="d-block">
+                        <p>Временный текст: стоимость зависит от длины волоса</p>
+                    </div>
+                </div>
+                <div class="pricing-entry ftco-animate">
+                    <div class="d-flex text align-items-center">
+                        <h3><span>Полировка волос + запечатывание кончиков</span></h3>
+                        <span class="price">от $20.00</span>
+                    </div>
+                    <div class="d-block">
+                        <p>Временный текст: стоимость зависит от длины волоса</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-5 pb-3">
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                <br> <a class="btn btn-primary px-4 py-3"
+                        style="color: #ce9c6b; background-color: #fff; transition: all 0.3s ease; text-decoration: none;"
+                        onmouseover="this.style.color='#070707'; this.style.backgroundColor='#ffffff';"
+                        onmouseout="this.style.color='#ce9c6b'; this.style.backgroundColor='#ffffff';">
+                Подробнее в INSTAGRAM
+            </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section" id="section3" style="margin-top: -180px">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section ftco-animate text-center">
+                <h2 class="mb-4" style="color: black">Галерея работ</h2>
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+            </div>
+        </div>
+        <div class="row d-flex blog-slider">
+            <button class="gallery-arrow left-arrow"><</button>
+            <div class="photo-gallery" id="photoGallery">
+                <div class="col-md-4 d-flex ftco-animate blog-slide">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                           style="background-image: url('../assets/images/gallery-1.jpg');">
+                        </a>
+                        <div class="text py-4 d-block">
+                            <div class="meta">
+                                <p>Временный текст: Название процедуры и затраченное время и цена</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex ftco-animate blog-slide">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                           style="background-image: url('../assets/images/gallery-2.jpg');">
+                        </a>
+                        <div class="text py-4 d-block">
+                            <div class="meta">
+                                <p>Временный текст: Название процедуры и затраченное время и цена</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex ftco-animate blog-slide">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                           style="background-image: url('../assets/images/gallery-3.jpg');">
+                        </a>
+                        <div class="text py-4 d-block">
+                            <div class="meta">
+                                <p>Временный текст: Название процедуры и затраченное время и цена</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex ftco-animate blog-slide">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                           style="background-image: url('../assets/images/image_1.jpg');">
+                        </a>
+                        <div class="text py-4 d-block">
+                            <div class="meta">
+                                <p>Временный текст: Название процедуры и затраченное время и цена</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex ftco-animate blog-slide">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                           style="background-image: url('../assets/images/image_2.jpg');">
+                        </a>
+                        <div class="text py-4 d-block">
+                            <div class="meta">
+                                <p>Временный текст: Название процедуры и затраченное время и цена</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex ftco-animate blog-slide">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                           style="background-image: url('../assets/images/image_3.jpg');">
+                        </a>
+                        <div class="text py-4 d-block">
+                            <div class="meta">
+                                <p>Временный текст: Название процедуры и затраченное время и цена</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="gallery-arrow right-arrow">></button>
+        </div>
+        <div class="row justify-content-center mb-5 pb-3">
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                <br> <a class="btn btn-primary px-4 py-3"
+                        style="color: #ce9c6b; background-color: #fff; margin-top: -50px; transition: all 0.3s ease; text-decoration: none;"
+                        onmouseover="this.style.color='#070707'; this.style.backgroundColor='#ffffff';"
+                        onmouseout="this.style.color='#ce9c6b'; this.style.backgroundColor='#ffffff';">
+                Подробнее в INSTAGRAM
+            </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section" id="section4" style="margin-top: -190px">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section ftco-animate text-center">
+                <h2 class="mb-4" style="color: black">Отзывы наших клиентов</h2>
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+            </div>
+        </div>
+        <div class="row d-flex blog-slider">
+            <div class="photo-gallery" id="photoGalleryOtziv" >
+                <div class="col-md-4 d-flex mb-sm-4 ftco-animate">
+                    <div class="staffix" style="border-color: white">
+                        <div class="img mb-4" style="background-image: url(../assets/images/otziv1.jpg);"></div>
+                        <div class="info text-center">
+                            <h3><a href="#">Название процедуры</a></h3>
+                            <span class="position">Наталья Кузнецова</span>
+                            <div class="text">
+                                <p>Временный текст: Просто великолепное качество капсульного наращивания! Волосы
+                                    выглядят естественно и держатся крепко.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex mb-sm-4 ftco-animate">
+                    <div class="staffix" style="border-color: white">
+                        <div class="img mb-4" style="background-image: url(../assets/images/otziv2.webp);"></div>
+                        <div class="info text-center">
+                            <h3><a href="#">Название процедуры</a></h3>
+                            <span class="position">Екатерина Васильева</span>
+                            <div class="text">
+                                <p>Временный текст: Просто великолепное качество капсульного наращивания! Волосы
+                                    выглядят естественно и держатся крепко.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex mb-sm-4 ftco-animate">
+                    <div class="staffix" style="border-color: white">
+                        <div class="img mb-4" style="background-image: url(../assets/images/otziv3.jpg);"></div>
+                        <div class="info text-center">
+                            <h3><a href="#">Название процедуры</a></h3>
+                            <span class="position">Ольга Петрова</span>
+                            <div class="text">
+                                <p>Временный текст: Просто великолепное качество капсульного наращивания! Волосы
+                                    выглядят естественно и держатся крепко.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex mb-sm-4 ftco-animate">
+                    <div class="staffix" style="border-color: white">
+                        <div class="img mb-4" style="background-image: url(../assets/images/afrohvost.jpg);"></div>
+                        <div class="info text-center">
+                            <h3><a href="#">Название процедуры</a></h3>
+                            <span class="position">Мария Смирнова</span>
+                            <div class="text">
+                                <p>Временный текст: Просто великолепное качество капсульного наращивания! Волосы
+                                    выглядят естественно и держатся крепко.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex mb-sm-4 ftco-animate">
+                    <div class="staffix" style="border-color: white">
+                        <div class="img mb-4" style="background-image: url(../assets/images/italiano-img.jpg);"></div>
+                        <div class="info text-center">
+                            <h3><a href="#">Название процедуры</a></h3>
+                            <span class="position">Елена Иванова</span>
+                            <div class="text">
+                                <p>Временный текст: Просто великолепное качество капсульного наращивания! Волосы
+                                    выглядят естественно и держатся крепко.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex mb-sm-4 ftco-animate">
+                    <div class="staffix" style="border-color: white">
+                        <div class="img mb-4" style="background-image: url(../assets/images/buolentochnoe.jpg);"></div>
+                        <div class="info text-center">
+                            <h3><a href="#">Название процедуры</a></h3>
+                            <span class="position">Анна Соколова</span>
+                            <div class="text">
+                                <p>Временный текст: Просто великолепное качество капсульного наращивания! Волосы
+                                    выглядят естественно и держатся крепко.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-5 pb-3">
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                <br> <a class="btn btn-primary px-4 py-3"
+                        style="color: #ce9c6b; background-color: #fff; margin-top: -50px; transition: all 0.3s ease; text-decoration: none;"
+                        onmouseover="this.style.color='#070707'; this.style.backgroundColor='#ffffff';"
+                        onmouseout="this.style.color='#ce9c6b'; this.style.backgroundColor='#ffffff';">
+                Подробнее в INSTAGRAM
+            </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section" style="margin-top:-190px" >
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section ftco-animate text-center">
+                <h2 class="mb-4" style="color: black">Заказать консультацию</h2>
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="container-wrap">
+        <div class="row no-gutters d-md-flex align-items-center">
+            <div class="col-md-6 d-flex align-self-stretch">
+                <div id="map" class="mapstyle"></div>
+            </div>
+            <div class="col-md-6 appointment ftco-animate" style="margin-top:-50px">
+                <h3 class="mb-3">Запись</h3>
+                <form action="/sendEmail" method="POST" class="appointment-form" id="sendRequestForm">
+                    <div class="d-md-flex">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Фамилия">
+                            <div class="error-message" id="last_nameError"></div>
+                        </div>
+                        <div class="form-group ml-md-4">
+                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Имя">
+                            <div class="error-message" id="first_nameError"></div>
+                        </div>
+                    </div>
+                    <div class="d-md-flex">
+                        <div class="form-group">
+                            <div class="input-wrap">
+                                <div class="icon"><span class="ion-md-calendar"></span></div>
+                                <input type="text" id="date" class="form-control" name="date" placeholder="Дата">
+                                <div class="error-message" id="dateError"></div>
+                            </div>
+                        </div>
+                        <div class="form-group ml-md-4">
+                            <div class="input-wrap">
+                                <div class="icon"><span class="ion-ios-clock"></span></div>
+                                <input type="text" class="form-control" id="flatpickr-time"  name="time" placeholder="Время">
+                                <div class="error-message" id="flatpickr-timeError"></div>
+                            </div>
+                        </div>
+                        <div class="form-group ml-md-4">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Телефон">
+                            <div class="error-message" id="phoneError"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="comment" id="comment" cols="30" rows="3" class="form-control"
+                                  placeholder="Комментарий"></textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="button" id="submitButton" onclick="validateForm()" value="Отправить" class="btn btn-primary py-3 px-4"
+                               style="color: #ce9c6b; background-color: #fff; margin-top: 20px; transition: all 0.3s ease; text-decoration: none;"
+                               onmouseover="this.style.color='#070707'; this.style.backgroundColor='#ffffff';"
+                               onmouseout="this.style.color='#ce9c6b'; this.style.backgroundColor='#ffffff';">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="section5" class="ftco-footer ftco-section img" style="color: white;margin-top: -180px;background-color: white;padding-bottom: 90px;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section ftco-animate text-center">
+                <h2 class="mb-4" style="color: #070707">Наши контакты</h2>
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-3">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2" style="color: #070707">Часто задаваемые вопросы</h2>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(../assets/images/image_1.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#" style="color: #070707">Можно всунуть видео.</a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="icon-person"></span> Давидович Кристина</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                        <!--<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>-->
+                        <li class="ftco-animate"><a href="#"><span class="icon-viber" style="color: #070707"> <img src="../assets/images/viberr.png" style="width: 150%"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-telegram" style="color: #070707"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-instagram" style="color: #070707"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2" style="color: #070707">Остались вопросы?</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker" style="color: #070707"></span><span class="text" style="color: #000000">Минск, ул. Макаенка 12В. Цокольный этаж</span></li>
+                            <li><a href="#"><span class="icon icon-phone" style="color: #070707"></span><span class="text" style="color: #000000">+375 (29) 310 95 35</span></a></li>
+                            <li><a href="#"><span class="icon icon-clock-o" style="color: #070707"></span><span class="text" style="color: #000000">Пн-Вс: 9.00-21.00</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope" style="color: #070707"></span><span class="text" style="color: #000000">kris_hair@gmail.com</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="ftco-footer-widget mb-4">
+                    <div class="col-md-8 ftco-animates text-center" data-scrollax=" properties: { translateY: '70%' }" >
+                        <img class="images-footer" src="../assets/images/image-kris-logobg.png"/>
+                        <p class="text-footer">
+                            kris_hair.Minsk
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="ftco-footer ftco-section img" style="color: rgba(0,0,0,0.32);padding-top: 10px;padding-bottom: 0px;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p style="color: rgb(255,255,255)"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <script>document.write(new Date().getFullYear())</script> © kris_hair.Minsk   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="../assets/js/popper.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.easing.1.3.js"></script>
+<script src="../assets/js/jquery.waypoints.min.js"></script>
+<script src="../assets/js/jquery.stellar.min.js"></script>
+<script src="../assets/js/owl.carousel.min.js"></script>
+<script src="../assets/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/js/aos.js"></script>
+<script src="../assets/js/jquery.animateNumber.min.js"></script>
+<script src="../assets/js/bootstrap-datepicker.js"></script>
+<script src="../assets/js/jquery.timepicker.min.js"></script>
+<script src="../assets/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="../assets/js/google-map.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+    const gallery = document.querySelector('.photo-gallery');
+
+    leftArrow.addEventListener('click', () => {
+        gallery.scrollBy({
+            left: -300, // Регулируйте количество пикселей для прокрутки влево
+            behavior: 'smooth'
+        });
+    });
+
+    rightArrow.addEventListener('click', () => {
+        gallery.scrollBy({
+            left: 300, // Регулируйте количество пикселей для прокрутки вправо
+            behavior: 'smooth'
+        });
+    });
+</script>
+<script>
+   /* const leftArrow = document.getElementById('left-arrow');
+    const rightArrow = document.getElementById('right-arrow');
+    const gallery = document.getElementById('photo-gallery');
+
+    leftArrow.addEventListener('click', () => {
+        gallery.scrollBy({
+            left: -500, // Регулируйте количество пикселей для прокрутки влево
+            behavior: 'smooth'
+        });
+    });
+
+    rightArrow.addEventListener('click', () => {
+        gallery.scrollBy({
+            left: 500, // Регулируйте количество пикселей для прокрутки вправо
+            behavior: 'smooth'
+        });
+    });*/
+   document.addEventListener('DOMContentLoaded', () => {
+       const leftArrow = document.querySelector('.left-arrow');
+       const rightArrow = document.querySelector('.right-arrow');
+       const gallery = document.getElementById('photoGallery');
+
+       leftArrow.addEventListener('click', () => {
+           gallery.scrollBy({
+               left: -gallery.clientWidth, // Прокрутка на 100% ширины контейнера влево
+               behavior: 'smooth'
+           });
+       });
+
+       rightArrow.addEventListener('click', () => {
+           gallery.scrollBy({
+               left: gallery.clientWidth, // Прокрутка на 100% ширины контейнера вправо
+               behavior: 'smooth'
+           });
+       });
+   });
+
+
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        flatpickr("#date", {
+            locale: "ru", // Устанавливаем язык на русский
+            dateFormat: "d.m.Y", // Формат даты
+            minDate: "today", // Запрет выбора прошлых дат
+            disableMobile: "true" // Отключение нативного календаря на мобильных устройствах
+        });
+    });
+</script>
+<script>
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map("map", {
+            center: [53.9045, 27.5615], // Координаты центра карты
+            zoom: 15
+        });
+
+        var placemark = new ymaps.Placemark([53.9045, 27.5615], {
+            balloonContent: 'Беларусь, Минск, ул. Макаенка 12В'
+        });
+
+        myMap.geoObjects.add(placemark);
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        flatpickr("#flatpickr-time", {
+            enableTime: true,        // Включить выбор времени
+            noCalendar: true,        // Отключить выбор даты
+            dateFormat: "H:i",       // Формат времени
+            time_24hr: true          // Использовать 24-часовой формат
+        });
+    });
+</script>
+<!--<script>function validateForm() {
+    // Устанавливаем флаги валидации на начальное значение (false)
+    var isFirstNameValid = false;
+    var isLastNameValid = false;
+    var isDateValid = false;
+    var isTimeValid = false;
+    var isPhoneAdminValid = false;
+
+
+    function setValidity(element, isValid, errorMessage) {
+        var errorId = element.id + "Error";
+        var errorElement = document.getElementById(errorId);
+
+        if (isValid) {
+            element.classList.remove("invalid");
+            element.classList.add("valid");
+            errorElement.innerHTML = "";
+        } else {
+            element.classList.remove("valid");
+            element.classList.add("invalid");
+            errorElement.innerHTML = errorMessage || "This field is required";
+        }
+        return isValid;
+    }
+
+    function isEmpty(value) {
+        return value.trim() === "";
+    }
+
+    // Проводим валидацию для каждого поля
+    isFirstNameValid = setValidity(document.getElementById("first_name"), !isEmpty(document.getElementById("first_name").value) && /^[A-Za-zА-Яа-яЁё]+$/u.test(document.getElementById("first_name").value), "Пожалуйста, введите корректно имя");
+    isLastNameValid = setValidity(document.getElementById("last_name"), !isEmpty(document.getElementById("last_name").value) && /^[A-Za-zА-Яа-яЁё]+$/u.test(document.getElementById("last_name").value), "Пожалуйста, введите корректно фамилию");
+    isDateValid = setValidity(document.getElementById("date"), !isEmpty(document.getElementById("date").value) && /^\d{2}\.\d{2}\.\d{4}$/.test(document.getElementById("date").value), "Пожалуйста, введите корректно дату");
+    isTimeValid = setValidity(document.getElementById("flatpickr-time"), !isEmpty(document.getElementById("flatpickr-time").value) && /^\d{2}:\d{2}$/.test(document.getElementById("flatpickr-time").value), "Пожалуйста, введите корректно время");
+    isPhoneAdminValid = setValidity(document.getElementById("phone"), !isEmpty(document.getElementById("phone").value) && /^\+375(29|33|44|25)\d{7}$/.test(document.getElementById("phone").value), "Пожалуйста, введите корректно телефон");
+
+    // Отправка формы, если все поля прошли валидацию
+    if (isFirstNameValid && isDateValid && isLastNameValid && isTimeValid && isPhoneAdminValid) {
+        document.getElementById("sendRequestForm").submit();
+    }
+
+    var submitButton = document.getElementById('submitButton');
+
+    // Здесь добавьте вашу логику валидации и отправки данных
+    // Например, можно использовать AJAX для отправки данных на сервер
+
+    // Пример с использованием fetch
+    fetch('/sendEmail', {
+        method: 'POST',
+        body: new FormData(document.getElementById('sendRequestForm')), // Используйте ID вашей формы
+    })
+        .then(response => {
+            if (response.ok) {
+                // Если запрос успешен, измените текст кнопки
+                submitButton.value = 'Заявка отправлена';
+            } else {
+                // Обработка ошибок
+                console.error('Ошибка отправки заявки');
+                submitButton.value = 'Ошибка отправки заявки';
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+
+}</script>-->
+<script>
+    function validateForm() {
+        var isFirstNameValid = false;
+        var isLastNameValid = false;
+        var isDateValid = false;
+        var isTimeValid = false;
+        var isPhoneAdminValid = false;
+
+        function setValidity(element, isValid, errorMessage) {
+            var errorId = element.id + "Error";
+            var errorElement = document.getElementById(errorId);
+
+            if (isValid) {
+                element.classList.remove("invalid");
+                element.classList.add("valid");
+                errorElement.innerHTML = "";
+            } else {
+                element.classList.remove("valid");
+                element.classList.add("invalid");
+                errorElement.innerHTML = errorMessage || "This field is required";
+            }
+            return isValid;
+        }
+
+        function isEmpty(value) {
+            return value.trim() === "";
+        }
+
+        // Проводим валидацию для каждого поля
+        isFirstNameValid = setValidity(document.getElementById("first_name"), !isEmpty(document.getElementById("first_name").value) && /^[A-Za-zА-Яа-яЁё]+$/u.test(document.getElementById("first_name").value), "Пожалуйста, введите корректно имя");
+        isLastNameValid = setValidity(document.getElementById("last_name"), !isEmpty(document.getElementById("last_name").value) && /^[A-Za-zА-Яа-яЁё]+$/u.test(document.getElementById("last_name").value), "Пожалуйста, введите корректно фамилию");
+        isDateValid = setValidity(document.getElementById("date"), !isEmpty(document.getElementById("date").value) && /^\d{2}\.\d{2}\.\d{4}$/.test(document.getElementById("date").value), "Пожалуйста, введите корректно дату");
+        isTimeValid = setValidity(document.getElementById("flatpickr-time"), !isEmpty(document.getElementById("flatpickr-time").value) && /^\d{2}:\d{2}$/.test(document.getElementById("flatpickr-time").value), "Пожалуйста, введите корректно время");
+        isPhoneAdminValid = setValidity(document.getElementById("phone"), !isEmpty(document.getElementById("phone").value) && /^\+375(29|33|44|25)\d{7}$/.test(document.getElementById("phone").value), "Пожалуйста, введите корректно телефон");
+
+        // Если все поля прошли валидацию, отправляем форму
+        if (isFirstNameValid && isDateValid && isLastNameValid && isTimeValid && isPhoneAdminValid) {
+            var submitButton = document.getElementById('submitButton');
+
+            // Сделайте кнопку неактивной
+            submitButton.disabled = true;
+
+            // Отправляем форму с использованием fetch
+            fetch('/sendEmail', {
+                method: 'POST',
+                body: new FormData(document.getElementById('sendRequestForm')), // Используйте ID вашей формы
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Если запрос успешен, измените текст кнопки
+                        submitButton.value = 'Заявка отправлена';
+                    } else {
+                        // Обработка ошибок
+                        submitButton.value = 'Ошибка отправки заявки';
+                        console.error('Ошибка отправки заявки');
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    submitButton.value = 'Ошибка отправки заявки';
+                });
+        }
+    }
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+</body>
+</html>
