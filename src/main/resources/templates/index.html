@@ -305,6 +305,8 @@
                 position: relative; /* Позиционирование для стрелок */
                 box-sizing: border-box; /* Включает границы и отступы в ширину контейнера */
                 margin-left: 30px;
+                scroll-snap-type: x mandatory; /* Привязывает элементы к позициям при прокрутке */
+
             }
 
             #photoGallery .col-md-4 {
@@ -312,6 +314,7 @@
                 max-width: 100%; /* Ширина элемента не должна превышать 100% */
                 box-sizing: border-box; /* Включает границы и отступы в ширину элемента */
                 margin: 0 10px; /* Отступы слева и справа между элементами */
+                scroll-snap-align: start;
             }
 
             .gallery-arrow {
