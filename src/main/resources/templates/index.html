@@ -166,12 +166,12 @@
 
         .ftco-animates {
             margin-left: 210px; /* Сдвиг вправо на больших экранах */
-            margin-top: 25px;   /* Отступ сверху */
+            margin-top: 25px; /* Отступ сверху */
             /* Другие стили для больших экранов */
         }
 
         .images-footer {
-          width: 156px;   /* Отступ сверху */
+            width: 156px; /* Отступ сверху */
             /* Другие стили для больших экранов */
         }
 
@@ -187,10 +187,19 @@
             color: rgb(239, 217, 97);
         }
 
+        #section5{
+
+            color: white;
+            margin-top: -180px;
+            background-color: white;
+            padding-bottom: 90px;
+
+        }
+
         @media (max-width: 768px) {
             .ftco-animates {
                 margin-left: -10px;
-                margin-top: 0px;
+                margin-top: -10px;
                 margin-bottom: -150px;
                 /* width: 30%; */
                 /* padding-bottom: 0px; */
@@ -198,7 +207,7 @@
             }
 
             .images-footer {
-                width: 156px;   /* Отступ сверху */
+                width: 56px; /* Отступ сверху */
                 /* Другие стили для больших экранов */
             }
 
@@ -250,53 +259,50 @@
                 right: 10px;
             }
             */
+            /* #photoGallery {
+                 display: flex;
+                 overflow: hidden; !* Скрывает элементы, выходящие за границы контейнера *!
+                 width: 70%; !* Ширина контейнера 70% *!
+                 margin: 0 auto; !* Центрирование контейнера *!
+                 position: relative; !* Позиционирование для стрелок *!
+                 box-sizing: border-box; !* Включает границы и отступы в ширину контейнера *!
+             }
 
-           /* #photoGallery {
-                display: flex;
-                overflow: hidden; !* Скрывает элементы, выходящие за границы контейнера *!
-                width: 70%; !* Ширина контейнера 70% *!
-                margin: 0 auto; !* Центрирование контейнера *!
-                position: relative; !* Позиционирование для стрелок *!
-                box-sizing: border-box; !* Включает границы и отступы в ширину контейнера *!
-            }
+             !* Стили для элементов внутри контейнера *!
+             #photoGallery .col-md-4 {
+                 flex: 0 0 100%; !* Каждый элемент занимает 100% ширины контейнера *!
+                 max-width: 100%; !* Ширина элемента не должна превышать 100% *!
+                 box-sizing: border-box; !* Включает границы и отступы в ширину элемента *!
+             }
 
-            !* Стили для элементов внутри контейнера *!
-            #photoGallery .col-md-4 {
-                flex: 0 0 100%; !* Каждый элемент занимает 100% ширины контейнера *!
-                max-width: 100%; !* Ширина элемента не должна превышать 100% *!
-                box-sizing: border-box; !* Включает границы и отступы в ширину элемента *!
-            }
+             !* Убедитесь, что элементы не имеют отступов или границ, которые могут повлиять на видимость *!
+             #photoGallery .blog-slide {
+                 margin: 5px;
+                 padding: 0;
+             }
 
-            !* Убедитесь, что элементы не имеют отступов или границ, которые могут повлиять на видимость *!
-            #photoGallery .blog-slide {
-                margin: 5px;
-                padding: 0;
-            }
+             !* Стили для стрелок *!
+             .gallery-arrow {
+                 position: absolute;
+                 top: 50%;
+                 background-color: transparent;
+                 border: 2px solid #ce9c6b;
+                 color: #ce9c6b;
+                 cursor: pointer;
+                 z-index: 10;
+                 padding: 10px;
+                 font-size: 24px; !* Размер стрелок *!
+                 transform: translateY(-50%); !* Центрирование стрелок по вертикали *!
+             }
 
-            !* Стили для стрелок *!
-            .gallery-arrow {
-                position: absolute;
-                top: 50%;
-                background-color: transparent;
-                border: 2px solid #ce9c6b;
-                color: #ce9c6b;
-                cursor: pointer;
-                z-index: 10;
-                padding: 10px;
-                font-size: 24px; !* Размер стрелок *!
-                transform: translateY(-50%); !* Центрирование стрелок по вертикали *!
-            }
+             !* Позиционирование стрелок по бокам *!
+             .left-arrow {
+                 left: -90px; !* Сдвигаем стрелку влево на 40px, чтобы она не перекрывала фото *!
+             }
 
-            !* Позиционирование стрелок по бокам *!
-            .left-arrow {
-                left: -90px; !* Сдвигаем стрелку влево на 40px, чтобы она не перекрывала фото *!
-            }
-
-            .right-arrow {
-                right: -90px; !* Сдвигаем стрелку вправо на 40px, чтобы она не перекрывала фото *!
-            }*/
-
-
+             .right-arrow {
+                 right: -90px; !* Сдвигаем стрелку вправо на 40px, чтобы она не перекрывала фото *!
+             }*/
             #photoGallery {
                 display: flex;
                 overflow: hidden; /* Скрывает элементы, выходящие за границы контейнера */
@@ -305,7 +311,7 @@
                 position: relative; /* Позиционирование для стрелок */
                 box-sizing: border-box; /* Включает границы и отступы в ширину контейнера */
                 margin-left: 30px;
-                scroll-snap-type: x mandatory; /* Привязывает элементы к позициям при прокрутке */
+
 
             }
 
@@ -314,7 +320,8 @@
                 max-width: 100%; /* Ширина элемента не должна превышать 100% */
                 box-sizing: border-box; /* Включает границы и отступы в ширину элемента */
                 margin: 0 10px; /* Отступы слева и справа между элементами */
-                scroll-snap-align: start;
+
+
             }
 
             .gallery-arrow {
@@ -332,30 +339,55 @@
 
             .left-arrow {
                 left: -90px; /* Расстояние от левого края контейнера */
+                z-index: 1;
             }
 
             .right-arrow {
                 right: -90px; /* Расстояние от правого края контейнера */
+                z-index: 1;
             }
 
-            #photoGalleryOtziv{
+            #photoGalleryOtziv {
                 display: flex;
-                overflow: hidden; /* Скрывает элементы, выходящие за границы контейнера */
-                width: 80%; /* Ширина контейнера 70% */
-                margin: 0 auto; /* Центрирование контейнера */
-                position: relative; /* Позиционирование для стрелок */
-                box-sizing: border-box; /* Включает границы и отступы в ширину контейнера */
-                margin-left: 30px;
+                overflow-x: auto; /* Включает горизонтальную прокрутку */
+                scroll-snap-type: x mandatory; /* Привязка элементов при прокрутке */
+                -webkit-overflow-scrolling: touch; /* Плавная прокрутка для iOS */
+                scroll-behavior: smooth; /* Плавная прокрутка */
             }
 
             #photoGalleryOtziv .col-md-4 {
-                flex: 0 0 auto; /* Элементы занимают столько места, сколько им нужно */
-                max-width: 100%; /* Ширина элемента не должна превышать 100% */
-                box-sizing: border-box; /* Включает границы и отступы в ширину элемента */
-                margin: 0 10px; /* Отступы слева и справа между элементами */
+                flex-shrink: 0; /* Запрещает сжимание элементов */
+                scroll-snap-align: start; /* Привязка каждого элемента к началу контейнера */
+                min-width: 100%; /* Ширина каждого элемента */
+            }
+
+            .mapstyle {
+                height: 85%;
+                width: 100%;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-color: rgb(229, 227, 223);
+            }
+
+            #section5{
+
+                    color: white;
+                    margin-top: 270px;
+                    background-color: white;
+                    padding-bottom: 90px;
+
             }
         }
 
+
+        @media (max-width: 767.98px) {
+            #map {
+                height: 300px;
+                margin-bottom: 30px;
+                margin-top: 650px;
+            }
+        }
 
         .error-message {
             font-size: 0.675rem; /* Немного меньше стандартного размера шрифта */
@@ -368,14 +400,14 @@
         }
     </style>
 </head>
-<body >
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <!-- <a class="navbar-brand" href="index.html">KrisHeir.minsk</a>-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
+            <span class="oi oi-menu"></span>
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
@@ -402,9 +434,9 @@
                 <p style="margin-top: -20px; color: #efd961;; font-size: 37px; font-weight: 300; font-family: 'Great Vibes', cursive">
                     kris_hair.Minsk
                 </p>
-               <h2 style="justify-content: center" class="mb-5"
+                <h2 style="justify-content: center" class="mb-5"
                     data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Профессиональное<br> наращивание
-                натуральных<br> волос в Минске</h2>
+                    натуральных<br> волос в Минске</h2>
                 <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a class="btn btn-primary px-4 py-3">г.
                     Минск ул. Макаенка 12В. Цокольный этаж</a></p>
             </div>
@@ -416,7 +448,7 @@
 <section class="ftco-intro">
     <div class="container-wrap" id="containerWrapMobile">
         <div class="wrap d-md-flex align-items-end">
-            <div class="info" >
+            <div class="info">
                 <div class="row no-gutters">
                     <div class="col-md-3 d-flex ">
                         <div class="icon"><span class="icon-phone"></span></div>
@@ -460,7 +492,7 @@
             <div class="col-md-7 heading-section ftco-animate text-center">
                 <h2 class="mb-4" style="color:black">Наши услуги</h2>
                 <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-               </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
@@ -470,8 +502,8 @@
                         <h3><a href="#">Итальянское микрокапсульное</a></h3>
                         <span class="position">наращивание волос</span>
                         <div class="text">
-                            <p>Временный текст: горячее наращивание волос микрокапсулами по современной итальянской
-                                технологии.</p>
+                            <p>
+                                Горячее наращивание волос, донорские пряди крепятся с помощью кератиновых капсул.</p>
                         </div>
                     </div>
                 </div>
@@ -483,8 +515,7 @@
                         <h3><a href="#">Биоленточное наращивание</a></h3>
                         <span class="position">наращивание волос</span>
                         <div class="text">
-                            <p>Временный текст: горячее наращивание волос микрокапсулами по современной итальянской
-                                технологии.</p>
+                            <p>Самый безопасный метод, подходит для тонких и слабых волос. Коррекция через 1,5-2 месяца.</p>
                         </div>
                     </div>
                 </div>
@@ -496,8 +527,7 @@
                         <h3><a href="#">Голливудское наращивание</a></h3>
                         <span class="position">наращивание волос</span>
                         <div class="text">
-                            <p>Временный текст: горячее наращивание волос микрокапсулами по современной итальянской
-                                технологии.</p>
+                            <p>Плетение косички из своих волос, к которой пришивается тресс, добавляя объем и длину.</p>
                         </div>
                     </div>
                 </div>
@@ -506,11 +536,13 @@
                 <div class="staff">
                     <div class="img mb-4" style="background-image: url(../assets/images/afrohvost.jpg);"></div>
                     <div class="info text-center">
-                        <h3><a href="#">Афропрически хвост "Водопад"</a></h3>
+                        <h3><a href="#">Африканские<br> прически</a></h3>
+
                         <span class="position">косы, локоны</span>
                         <div class="text">
-                            <p>Временный текст: горячее наращивание волос микрокапсулами по современной итальянской
-                                технологии.</p>
+                            <p>Плетение причёсок:
+                                Афролоконы, водопад, афрохвост, брейды, с.е косы, д.е косы, коса «Ким» и другие
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -526,7 +558,7 @@
             <div class="col-md-7 heading-section ftco-animate text-center">
                 <h2 class="mb-4" style="color:black">Наши цены</h2>
                 <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-               </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -729,7 +761,7 @@
             </div>
         </div>
         <div class="row d-flex blog-slider">
-            <div class="photo-gallery" id="photoGalleryOtziv" >
+            <div class="photo-gallery" id="photoGalleryOtziv">
                 <div class="col-md-4 d-flex mb-sm-4 ftco-animate">
                     <div class="staffix" style="border-color: white">
                         <div class="img mb-4" style="background-image: url(../assets/images/otziv1.jpg);"></div>
@@ -824,7 +856,7 @@
 </section>
 
 
-<section class="ftco-section" style="margin-top:-190px" >
+<section class="ftco-section" style="margin-top:-190px">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section ftco-animate text-center">
@@ -844,7 +876,8 @@
                 <form action="/sendEmail" method="POST" class="appointment-form" id="sendRequestForm">
                     <div class="d-md-flex">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Фамилия">
+                            <input type="text" class="form-control" id="last_name" name="last_name"
+                                   placeholder="Фамилия">
                             <div class="error-message" id="last_nameError"></div>
                         </div>
                         <div class="form-group ml-md-4">
@@ -863,7 +896,8 @@
                         <div class="form-group ml-md-4">
                             <div class="input-wrap">
                                 <div class="icon"><span class="ion-ios-clock"></span></div>
-                                <input type="text" class="form-control" id="flatpickr-time"  name="time" placeholder="Время">
+                                <input type="text" class="form-control" id="flatpickr-time" name="time"
+                                       placeholder="Время">
                                 <div class="error-message" id="flatpickr-timeError"></div>
                             </div>
                         </div>
@@ -878,7 +912,8 @@
 
                     </div>
                     <div class="form-group">
-                        <input type="button" id="submitButton" onclick="validateForm()" value="Отправить" class="btn btn-primary py-3 px-4"
+                        <input type="button" id="submitButton" onclick="validateForm()" value="Отправить"
+                               class="btn btn-primary py-3 px-4"
                                style="color: #ce9c6b; background-color: #fff; margin-top: 20px; transition: all 0.3s ease; text-decoration: none;"
                                onmouseover="this.style.color='#070707'; this.style.backgroundColor='#ffffff';"
                                onmouseout="this.style.color='#ce9c6b'; this.style.backgroundColor='#ffffff';">
@@ -890,7 +925,8 @@
 </section>
 
 
-<section id="section5" class="ftco-footer ftco-section img" style="color: white;margin-top: -180px;background-color: white;padding-bottom: 90px;">
+<section id="section5" class="ftco-footer ftco-section img"
+         >
     <div class="overlay"></div>
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
@@ -914,9 +950,12 @@
                     </div>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <!--<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>-->
-                        <li class="ftco-animate"><a href="#"><span class="icon-viber" style="color: #070707"> <img src="../assets/images/viberr.png" style="width: 150%"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-telegram" style="color: #070707"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-instagram" style="color: #070707"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-viber" style="color: #070707"> <img
+                                src="../assets/images/viberr.png" style="width: 150%"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-telegram" style="color: #070707"></span></a>
+                        </li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-instagram" style="color: #070707"></span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -925,17 +964,22 @@
                     <h2 class="ftco-heading-2" style="color: #070707">Остались вопросы?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon icon-map-marker" style="color: #070707"></span><span class="text" style="color: #000000">Минск, ул. Макаенка 12В. Цокольный этаж</span></li>
-                            <li><a href="#"><span class="icon icon-phone" style="color: #070707"></span><span class="text" style="color: #000000">+375 (29) 310 95 35</span></a></li>
-                            <li><a href="#"><span class="icon icon-clock-o" style="color: #070707"></span><span class="text" style="color: #000000">Пн-Вс: 9.00-21.00</span></a></li>
-                            <li><a href="#"><span class="icon icon-envelope" style="color: #070707"></span><span class="text" style="color: #000000">kris_hair@gmail.com</span></a></li>
+                            <li><span class="icon icon-map-marker" style="color: #070707"></span><span class="text"
+                                                                                                       style="color: #000000">Минск, ул. Макаенка 12В. Цокольный этаж</span>
+                            </li>
+                            <li><a href="#"><span class="icon icon-phone" style="color: #070707"></span><span
+                                    class="text" style="color: #000000">+375 (29) 310 95 35</span></a></li>
+                            <li><a href="#"><span class="icon icon-clock-o" style="color: #070707"></span><span
+                                    class="text" style="color: #000000">Пн-Вс: 9.00-21.00</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope" style="color: #070707"></span><span
+                                    class="text" style="color: #000000">kris_hair@gmail.com</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="ftco-footer-widget mb-4">
-                    <div class="col-md-8 ftco-animates text-center" data-scrollax=" properties: { translateY: '70%' }" >
+                    <div class="col-md-8 ftco-animates text-center" data-scrollax=" properties: { translateY: '70%' }">
                         <img class="images-footer" src="../assets/images/image-kris-logobg.png"/>
                         <p class="text-footer">
                             kris_hair.Minsk
@@ -953,8 +997,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <p style="color: rgb(255,255,255)"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <script>document.write(new Date().getFullYear())</script> © kris_hair.Minsk   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                <p style="color: rgb(255,255,255)">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <script>document.write(new Date().getFullYear())</script>
+                    © kris_hair.Minsk
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             </div>
         </div>
     </div>
@@ -998,43 +1045,42 @@
     });
 </script>
 <script>
-   /* const leftArrow = document.getElementById('left-arrow');
-    const rightArrow = document.getElementById('right-arrow');
-    const gallery = document.getElementById('photo-gallery');
+    /* const leftArrow = document.getElementById('left-arrow');
+     const rightArrow = document.getElementById('right-arrow');
+     const gallery = document.getElementById('photo-gallery');
 
-    leftArrow.addEventListener('click', () => {
-        gallery.scrollBy({
-            left: -500, // Регулируйте количество пикселей для прокрутки влево
-            behavior: 'smooth'
+     leftArrow.addEventListener('click', () => {
+         gallery.scrollBy({
+             left: -500, // Регулируйте количество пикселей для прокрутки влево
+             behavior: 'smooth'
+         });
+     });
+
+     rightArrow.addEventListener('click', () => {
+         gallery.scrollBy({
+             left: 500, // Регулируйте количество пикселей для прокрутки вправо
+             behavior: 'smooth'
+         });
+     });*/
+    document.addEventListener('DOMContentLoaded', () => {
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        const gallery = document.getElementById('photoGallery');
+
+        leftArrow.addEventListener('click', () => {
+            gallery.scrollBy({
+                left: -gallery.clientWidth, // Прокрутка на 100% ширины контейнера влево
+                behavior: 'smooth'
+            });
+        });
+
+        rightArrow.addEventListener('click', () => {
+            gallery.scrollBy({
+                left: gallery.clientWidth, // Прокрутка на 100% ширины контейнера вправо
+                behavior: 'smooth'
+            });
         });
     });
-
-    rightArrow.addEventListener('click', () => {
-        gallery.scrollBy({
-            left: 500, // Регулируйте количество пикселей для прокрутки вправо
-            behavior: 'smooth'
-        });
-    });*/
-   document.addEventListener('DOMContentLoaded', () => {
-       const leftArrow = document.querySelector('.left-arrow');
-       const rightArrow = document.querySelector('.right-arrow');
-       const gallery = document.getElementById('photoGallery');
-
-       leftArrow.addEventListener('click', () => {
-           gallery.scrollBy({
-               left: -gallery.clientWidth, // Прокрутка на 100% ширины контейнера влево
-               behavior: 'smooth'
-           });
-       });
-
-       rightArrow.addEventListener('click', () => {
-           gallery.scrollBy({
-               left: gallery.clientWidth, // Прокрутка на 100% ширины контейнера вправо
-               behavior: 'smooth'
-           });
-       });
-   });
-
 
 
 </script>
@@ -1063,7 +1109,7 @@
     });
 </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         flatpickr("#flatpickr-time", {
             enableTime: true,        // Включить выбор времени
             noCalendar: true,        // Отключить выбор даты
